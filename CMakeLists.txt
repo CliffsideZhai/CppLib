@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.22)
+project(CppLib)
+
+set(CMAKE_CXX_STANDARD 14)
+enable_testing()
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread")
+set(gtest_DIR "/usr/local/include/gtest")
+add_executable(CppLib main.cpp)
+find_package(Boost REQUIRED)
+find_package(benchmark REQUIRED)
+add_subdirectory(base)
+add_subdirectory(util)
